@@ -31,9 +31,3 @@ jobs:
           path: target/surefire-reports/*.xml
           reporter: java-junit
           fail-on-error: true
-
-      - name: Build and push the image
-        run: |
-          docker login --username sjpagano --password-stdin
-          docker build -t ghcr.io/sjpagano/ducks-service:latest --file Dockerfile .  
-          docker push ghcr.io/sjpagano/ducks-service:latest 
